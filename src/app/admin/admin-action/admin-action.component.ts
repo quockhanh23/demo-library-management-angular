@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AdminService} from "../../service/admin.service";
 
 @Component({
   selector: 'app-admin-action',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminActionComponent implements OnInit {
 
-  constructor() { }
+  constructor(adminService: AdminService) {
+  }
 
   ngOnInit(): void {
   }

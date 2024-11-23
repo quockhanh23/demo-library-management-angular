@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Member} from "../models/member";
 import {Observable} from "rxjs";
 import {Book} from "../models/book";
 import {environment} from "../../environments/environment.prod";
@@ -25,6 +24,14 @@ export class BookService {
 
   getDetailBook(bookId: any): Observable<Book> {
     return this.httpClient.get<Book>(API_URL + `/get-one?bookId=${bookId}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+      }
+    });
+  }
+
+  getAllBook(): Observable<Book[]> {
+    return this.httpClient.get<Book[]>(API_URL + `/get-all-books`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
       }

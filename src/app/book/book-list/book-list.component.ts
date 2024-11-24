@@ -17,6 +17,7 @@ export class BookListComponent implements OnInit {
   previousPageNumber?: number = 1;
   currentNumber?: number = 2;
   nextPageNumber?: number = 3;
+  checkAddBook = false;
 
   constructor(private bookService: BookService) {
   }
@@ -62,5 +63,12 @@ export class BookListComponent implements OnInit {
       this.previousPageNumber = this.currentPage
       this.nextPageNumber = this.currentPage + 2
     }
+  }
+
+  addNewBook() {
+    this.checkAddBook = true
+  }
+  closeAddNewBook() {
+    this.checkAddBook = false
   }
 }

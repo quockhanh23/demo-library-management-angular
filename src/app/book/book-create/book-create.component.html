@@ -1,1 +1,28 @@
-<p>book-create works!</p>
+<form [formGroup]="bookForm" (ngSubmit)="createBook()">
+  <section>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+          <div class="row align-items-center">
+            <div class="col mt-4">
+              <input type="text" formControlName="title" class="form-control"
+                     placeholder="Tên sản phẩm">
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col mt-4">
+              <input type="text" formControlName="author" class="form-control"
+                     placeholder="Mô tả sản phẩm">
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col mt-4">
+              <input type="text" formControlName="publisher" class="form-control"
+                     placeholder="Mô tả sản phẩm">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>

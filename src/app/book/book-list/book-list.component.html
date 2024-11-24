@@ -1,6 +1,11 @@
 <app-header></app-header>
 <div class="container">
   <h1>Tất cả sách</h1>
+  <button *ngIf="!checkAddBook" (click)="addNewBook()">Thêm sách mới</button>
+  <button *ngIf="checkAddBook" (click)="closeAddNewBook()">Thêm sách mới</button>
+  <div *ngIf="checkAddBook">
+    <app-book-create></app-book-create>
+  </div>
   <h2>{{page?.page?.totalElements}}</h2>
   <div *ngFor="let book of books">
     <div class="book-list">
@@ -12,8 +17,6 @@
       </div>
     </div>
   </div>
-  <h2 (click)="previousPage()"><</h2>
-  <h2 (click)="nextPage()">></h2>
   <nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item">

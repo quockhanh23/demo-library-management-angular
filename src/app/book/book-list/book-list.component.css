@@ -1,0 +1,26 @@
+.book-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.book:last-child {
+  border-bottom: none;
+}
+
+.book-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.book-author {
+  color: #555;
+}

@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Book} from "../models/book";
 import {environment} from "../../environments/environment.prod";
+import {PageImpl} from "../models/page-impl";
 
 const API_URL = environment.apiUrl + "/books";
 
@@ -30,8 +31,8 @@ export class BookService {
     });
   }
 
-  getAllBook(): Observable<Book[]> {
-    return this.httpClient.get<Book[]>(API_URL + `/get-all-books`, {
+  getAllBook(page: number, size: number): Observable<PageImpl> {
+    return this.httpClient.get<PageImpl>(API_URL + `/get-all-books?page=${page}&?size=${size}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
       }

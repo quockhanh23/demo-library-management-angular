@@ -10,12 +10,14 @@ import {ToastrModule} from "ngx-toastr";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { AdminActionComponent } from './admin/admin-action/admin-action.component';
-import { MemberCreateComponent } from './member/member-create/member-create.component';
-import { MemberDetailComponent } from './member/member-detail/member-detail.component';
-import { BookCreateComponent } from './book/book-create/book-create.component';
-import { BookListComponent } from './book/book-list/book-list.component';
-import { BookDetailComponent } from './book/book-detail/book-detail.component';
+import {AdminActionComponent} from './admin/admin-action/admin-action.component';
+import {MemberCreateComponent} from './member/member-create/member-create.component';
+import {MemberDetailComponent} from './member/member-detail/member-detail.component';
+import {BookCreateComponent} from './book/book-create/book-create.component';
+import {BookListComponent} from './book/book-list/book-list.component';
+import {BookDetailComponent} from './book/book-detail/book-detail.component';
+import {FooterComponent} from './footer/footer.component';
+import {HeaderComponent} from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BookDetailComponent } from './book/book-detail/book-detail.component';
     MemberDetailComponent,
     BookCreateComponent,
     BookListComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

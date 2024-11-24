@@ -1,5 +1,39 @@
-<div *ngFor="let book of books">
-  <h2>{{book.title}}</h2>
-  <h2>{{book.author}}</h2>
-  <h2>{{book.yearPublished}}</h2>
+<app-header></app-header>
+<div class="container">
+  <h1>Tất cả sách</h1>
+  <h2>{{page?.page?.totalElements}}</h2>
+  <div *ngFor="let book of books">
+    <div class="book-list">
+      <div class="book">
+        <div class="book-title">{{book?.title}}</div>
+        <div class="book-author">{{book?.author}}</div>
+        <h2>{{book?.yearPublished}}</h2>
+        <button>Xem chi tiết</button>
+      </div>
+    </div>
+  </div>
+  <h2 (click)="previousPage()"><</h2>
+  <h2 (click)="nextPage()">></h2>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <div (click)="previousPage()">
+          <a class="page-link" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </div>
+      </li>
+      <li class="page-item"><a class="page-link">{{previousPageNumber}}</a></li>
+      <li class="page-item"><a class="page-link">{{currentNumber}}</a></li>
+      <li class="page-item"><a class="page-link">{{nextPageNumber}}</a></li>
+      <li class="page-item">
+        <a (click)="nextPage()" class="page-link" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <h3>Trang: {{currentPageAddOne}}</h3>
 </div>
